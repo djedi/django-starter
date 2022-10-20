@@ -16,6 +16,8 @@ mv projectname $new_project_name
 cp dev.env .env
 
 # Set up virtualenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 pyenv install $PYTHON_VERSION
 pyenv virtualenv 3.10.7 $new_project_name
 pyenv activate $new_project_name

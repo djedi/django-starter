@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <title>
+            {% block title %}Djedi's Django Starter{% endblock title %}
+        </title>
+        <meta name="description" content="A repo for launching new Django projects quickly.">
+        <meta name="author" content="Dustin Davis">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+        {% block css %}
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
+    </head>
+    <body>
+        <header class="header">
+            {% if user.is_authenticated %}
+                <span>
+                    {{ user.email }}
+                </span>
+                <a href="{% url 'account_change_password' %}">Change password</a>
+                <a href="{% url 'account_logout' %}">Sign out</a>
+            {% else %}
+                <form>
+                    <a href="{% url 'account_login' %}">Log in</a>
+                    <a href="{% url 'account_signup' %}">Sign up</a>
+                </form>
+            {% endif %}
+        </header>
+
+        <div class="content">
+            {% block content %}
+                <p>Default content...</p>
+            {% endblock content %}
+        </div>
+
+        <footer class="footer">
+            <div>
+                <span>&copy; {% now 'Y' %} Djedi</span>
+            </div>
+        </footer>
+
+        {% block javascript %}
+            <!-- Project JS -->
+            <script src="{% static 'js/base.js' %}"></script>
+
+        {% endblock javascript %}
+    </body>
+</html>

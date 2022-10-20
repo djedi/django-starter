@@ -18,18 +18,24 @@
     </head>
     <body>
         <header class="header">
-            {% if user.is_authenticated %}
-                <span>
-                    {{ user.email }}
-                </span>
-                <a href="{% url 'account_change_password' %}">Change password</a>
-                <a href="{% url 'account_logout' %}">Sign out</a>
-            {% else %}
-                <form>
-                    <a href="{% url 'account_login' %}">Log in</a>
-                    <a href="{% url 'account_signup' %}">Sign up</a>
-                </form>
-            {% endif %}
+            <div class="left">
+                <a href="{% url 'home' %}">Home</a> |
+                <a href="{% url 'about' %}">About</a>
+            </div>
+            <div class="right">
+                {% if user.is_authenticated %}
+                    <span>
+                        {{ user.email }}
+                    </span>
+                    <a href="{% url 'account_change_password' %}">Change password</a>
+                    <a href="{% url 'account_logout' %}">Sign out</a>
+                {% else %}
+                    <form>
+                        <a href="{% url 'account_login' %}">Log in</a>
+                        <a href="{% url 'account_signup' %}">Sign up</a>
+                    </form>
+                {% endif %}
+            </div>
         </header>
 
         <div class="content">
@@ -40,7 +46,7 @@
 
         <footer class="footer">
             <div>
-                <span>&copy; {% now 'Y' %} Djedi</span>
+                <span>&copy;{% now 'Y' %} <a href="https://dustindavis.me">Djedi</a></span>
             </div>
         </footer>
 

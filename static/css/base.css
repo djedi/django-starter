@@ -19,6 +19,10 @@ body {
   background: lightgray;
 }
 
+.header .left {
+  float: left;
+}
+
 .content {
   margin: 20px;
 }

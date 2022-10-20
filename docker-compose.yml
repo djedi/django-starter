@@ -9,6 +9,8 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
 
   web:
     build: .
@@ -21,5 +23,6 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - DJANGO_SETTINGS_MODULE=projectname.settings.prod
     depends_on:
       - db

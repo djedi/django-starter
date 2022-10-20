@@ -6,8 +6,6 @@ from . import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
-
 INSTALLED_APPS += [
     "debug_toolbar",
 ]
@@ -15,3 +13,14 @@ INSTALLED_APPS += [
 MIDDLEWARE += [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "127.0.0.1",
+        "PORT": 5432,
+    }
+}

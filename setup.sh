@@ -3,14 +3,14 @@
 declare -x PYTHON_VERSION=3.10.7
 declare -x PREREQS="pyenv pyenv-virtualenv"
 
-read -p "Install pre-requisites? ($PRE)"
+read -p "Install pre-requisites? ($PREREQ)"
 
 read -p "Enter main project folder name: " new_project_name
 declare -x venv_name="${new_project_name}_env"
 echo "renaming project to $new_project_name"
 
 # rename project
-find . -iname '*.py' -o -iname '*.env' -o -iname '*.yml' -exec sed -i "" -e "s/projectname/${new_project_name}/g" {} \;
+find . -exec sed -i "" -e "s/projectname/${new_project_name}/g" {} \;
 mv projectname $new_project_name
 
 # copy .env variables

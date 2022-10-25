@@ -3,7 +3,11 @@
 declare -x PYTHON_VERSION=3.10.7
 declare -x PREREQS="pyenv pyenv-virtualenv"
 
-read -p "Install pre-requisites? ($PREREQ)"
+read -p "Install pre-requisites? ($PREREQS)" install_prereqs
+
+if [ install_prereqs ] ; then
+    brew install $PREREQS
+fi
 
 read -p "Enter main project folder name: " new_project_name
 declare -x venv_name="${new_project_name}_env"

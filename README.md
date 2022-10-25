@@ -7,8 +7,8 @@ This is a work in progress, but should be usable now if you understand what you'
 1. Clone this repo.
 
    ```shell
-   git clone https://github.com/djedi/django-starter.git
-   cd django-starter
+   git clone https://github.com/djedi/django-starter.git websitename
+   cd websitename
    ```
 
 1. Run setup script.

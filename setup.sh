@@ -23,6 +23,7 @@ pyenv virtualenv 3.10.7 $new_project_name
 pyenv activate $new_project_name
 pip install --upgrade pip
 pip install -r requirements/dev.txt
+echo $new_project_name > .python-version
 
 # regenerate secret key
 key1=$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')

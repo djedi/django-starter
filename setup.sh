@@ -6,6 +6,7 @@ declare -x PREREQS="pyenv pyenv-virtualenv"
 read -p "Install pre-requisites? ($PRE)"
 
 read -p "Enter main project folder name: " new_project_name
+declare -x venv_name="${new_project_name}_env"
 echo "renaming project to $new_project_name"
 
 # rename project
@@ -19,11 +20,11 @@ cp dev.env .env
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv install $PYTHON_VERSION
-pyenv virtualenv 3.10.7 $new_project_name
-pyenv activate $new_project_name
+pyenv virtualenv 3.10.7 $venv_name
+pyenv local $venv_name
 pip install --upgrade pip
 pip install -r requirements/dev.txt
-echo $new_project_name > .python-version
+
 
 # regenerate secret key
 key1=$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')

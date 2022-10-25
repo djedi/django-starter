@@ -1,8 +1,8 @@
 """
 Development settings overrides
 """
-# pylint: disable=wildcard-import, unused-import
-from . import *
+# pylint: disable=wildcard-import, unused-import, unused-wildcard-import
+from .base import *
 
 DEBUG = True
 

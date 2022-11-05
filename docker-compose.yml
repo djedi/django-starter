@@ -14,11 +14,11 @@ services:
 
   web:
     build: .
-    command: uvicorn projectname.asgi:application --reload --host 0.0.0.0 --port 8000 
+    command: uvicorn projectname.asgi:application --reload --host 0.0.0.0 --port 8007 
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "8007:8007"
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres

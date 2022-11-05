@@ -24,3 +24,6 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
+# http://whitenoise.evans.io/en/stable/django.html#add-compression-and-caching-support
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

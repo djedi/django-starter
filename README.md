@@ -2,6 +2,8 @@
 
 This is a work in progress, but should be usable now if you understand what you're doing. These are my opinionated preferences when starting a new app. If you have suggestions I'm certainly open to them. Feel free to submit a pull request.
 
+To see an example of the basic starter app, visit https://django-starter.djedi.dev/
+
 ## Setup
 
 1. Clone this repo.

@@ -18,3 +18,8 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
+ALLOWED_HOSTS = (
+    "192.168.1.4",
+    "django-starter.djedi.dev",
+)
